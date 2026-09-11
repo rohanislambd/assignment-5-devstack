@@ -12,8 +12,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   return (
     <div className="container mx-auto ">
       <h2 className="text-4xl font-bold">
-        Explore the{" "}
-        <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
+        Explore the <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
           Technologies
         </span>
       </h2>
@@ -22,9 +21,12 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
       </p>
 
       <div className="grid grid-cols-12">
-        <div className="grid col-span-8  grid-cols-3 gap-5">
+        <div className="grid col-span-9  grid-cols-3 gap-5">
           {technologies.map((technology) => {
-            return <TechnologyCard technology={technology} />;
+            return <TechnologyCard
+            key={technology.id} 
+            technology={technology} 
+            />;
           })}
         </div>
       </div>
