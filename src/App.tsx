@@ -1,14 +1,13 @@
-import { HiAcademicCap } from "react-icons/hi"
+import Banner from "./components/Banner"
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
     <>
-    <h2 className="text-4xl">DevStack</h2>
-    <button className="btn btn-outline">Default</button>
-
-      <HiAcademicCap />
-
+    <Navbar/>
+    <Banner/>
+    
     </>
   )
 }
