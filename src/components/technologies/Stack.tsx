@@ -11,7 +11,7 @@ const Stack = ({ selectTechnologies, setSelectedTechnologies }: StackProps) => {
     setSelectedTechnologies([]);
   };
   return (
-    <div className="p-3 space-y-3">
+    <div className="p-3 space-y-3 ">
       <h2 className="text-xl font-bold ">Your Stack</h2>
       {selectTechnologies.length === 0 ? (
         <>

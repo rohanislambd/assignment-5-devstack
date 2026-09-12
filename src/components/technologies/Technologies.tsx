@@ -17,18 +17,18 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   
   return (
     <div className="container mx-auto ">
-      <h2 className="text-4xl font-bold">
+      <h2 className="text-4xl font-bold mx-4">
         Explore the{" "}
         <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
           Technologies
         </span>
       </h2>
-      <p className="text-[#64748B] text-[16px] pt-2">
+      <p className="text-[#64748B] text-[16px] pt-2 mx-4">
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <div className="grid grid-cols-12 gap-8">
-        <div className="grid col-span-9  grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-12 gap-8 mx-4">
+        <div className="grid col-span-9  md:grid-cols-3 gap-5">
           {technologies.map((technology) => {
             return (
               <TechnologyCard key={technology.id}
@@ -41,7 +41,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
         </div>
 
         {/* Stack Cart */}
-        <div className="grid col-span-3 h-60 border border-gray-100 rounded-xl">
+        <div className="col-span-9 md:col-span-3 min-h-60 border border-gray-100 rounded-xl">
           <Stack
            selectTechnologies={selectTechnologies}
            setSelectedTechnologies={setSelectedTechnologies}

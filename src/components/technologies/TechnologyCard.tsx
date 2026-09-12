@@ -60,7 +60,7 @@ const TechnologyCard = ({
         <p>{technology.description}</p>
         <div className="flex justify-between items-center">
           <button className="btn">{technology.category}</button>
-          <p>{technology.difficulty}</p>
+          <p className="block md:hidden xl:block">{technology.difficulty}</p>
           <p className="flex justify-center items-center gap-1">
             {" "}
             <span className="text-yellow-400">
