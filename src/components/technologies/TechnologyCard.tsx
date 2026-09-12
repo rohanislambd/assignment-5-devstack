@@ -69,7 +69,7 @@ const TechnologyCard = ({
         </div>
         <button
           onClick={handleAddToStack}
-          disabled={isAdded}
+          // disabled={isAdded}
           className={`btn rounded-xl  ${isAdded ? "btn-secondary" : "btn-neutral"} w-full`}
         >
           {isAdded ? "Added to Stack" : "Add to Stack"}

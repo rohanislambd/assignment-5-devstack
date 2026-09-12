@@ -23,7 +23,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
           Technologies
         </span>
       </h2>
-      <p className="text-[#64748B] text-[16px] pt-2 mx-4">
+      <p className="text-[#64748B] text-[16px] pt-2 mx-4 mb-10">
         Pick one technology per category to build your ideal stack.
       </p>
 

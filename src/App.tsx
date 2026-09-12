@@ -17,7 +17,7 @@ function App() {
     <>
     <Navbar/>
     <Banner/>
-    <Suspense fallback={<div>Looding......</div>}>
+    <Suspense fallback={<div className="text-center text-5xl text-red-600">Looding........................</div>}>
        <Technologies technologiesPromise={technologiesPromise} />
     </Suspense>
     

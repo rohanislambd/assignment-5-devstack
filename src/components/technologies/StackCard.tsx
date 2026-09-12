@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechnologies } from "../../types/type";
 import { RxCross2 } from "react-icons/rx";
+import { Bounce, toast } from "react-toastify";
 
 interface IStackCardProps{
     technology:ITechnologies;
@@ -12,7 +13,13 @@ const StackCard = ({technology, selectTechnologies, setSelectedTechnologies}:ISt
 
     const handleRemoveTechnology = (technology:ITechnologies) =>{
         const remainingTechnology = selectTechnologies.filter((selectTechnology) => selectTechnology.id !== technology.id );
-        setSelectedTechnologies(remainingTechnology)
+        setSelectedTechnologies(remainingTechnology);
+         toast.warning(`${technology.name} removed from your stack`, {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "light",
+        transition: Bounce,
+      });
     }
   return (
     <div>

@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechnologies } from "../../types/type";
 import StackCard from "./StackCard";
+import { Bounce, toast } from "react-toastify";
 
 interface StackProps {
   selectTechnologies: ITechnologies[];
@@ -9,6 +10,12 @@ interface StackProps {
 const Stack = ({ selectTechnologies, setSelectedTechnologies }: StackProps) => {
   const handleRemoveAll = () => {
     setSelectedTechnologies([]);
+    toast.warning("All technologies removed from your stack", {
+    position: "top-center",
+    autoClose: 3000,
+    theme: "light",
+    transition: Bounce,
+  });
   };
   return (
     <div className="p-3 space-y-3">
