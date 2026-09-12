@@ -36,7 +36,7 @@ const TechnologyCard = ({
     } else {
       setSelectedTechnologies([...selectTechnologies, technology]);
 
-      toast.success(`${technology.name} Added`, {
+      toast.success(`${technology.name} added to stack`, {
         position: "top-center",
         autoClose: 3000,
         theme: "light",
@@ -55,11 +55,11 @@ const TechnologyCard = ({
           <p className="text-blue-400 btn rounded-full">{technology.badge}</p>
         </div>
         <h3 className="font-bold">{technology.name}</h3>
-        <p>{technology.description}</p>
+        <p className="text-[#64748B]">{technology.description}</p>
         <div className="flex justify-between items-center">
           <button className="btn">{technology.category}</button>
-          <p className="block md:hidden xl:block">{technology.difficulty}</p>
-          <p className="flex justify-center items-center gap-1">
+          <p className="block md:hidden xl:block text-[#64748B]">{technology.difficulty}</p>
+          <p className="flex justify-center items-center gap-1 font-semibold">
             {" "}
             <span className="text-yellow-400">
               <IoStar />

@@ -18,7 +18,7 @@ const Stack = ({ selectTechnologies, setSelectedTechnologies }: StackProps) => {
   });
   };
   return (
-    <div className="p-3 space-y-3">
+    <div className="p-3 space-y-3 ">
       <h2 className="text-xl font-bold ">Your Stack</h2>
       {selectTechnologies.length === 0 ? (
         <>
@@ -28,10 +28,10 @@ const Stack = ({ selectTechnologies, setSelectedTechnologies }: StackProps) => {
           </div>
         </>
       ) : (
-        <div className="space-y-3">
+        <div className="space-y-3 ">
           <p className="text-[#94A3B8]">
             {" "}
-            {selectTechnologies.length}Technology Selected
+            {selectTechnologies.length} Technology Selected
           </p>
           <div className="space-y-2">
             {selectTechnologies.map((technology: ITechnologies) => {

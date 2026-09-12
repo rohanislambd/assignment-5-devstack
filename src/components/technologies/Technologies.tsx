@@ -41,7 +41,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
         </div>
 
         {/* Stack Cart */}
-        <div className="col-span-9 md:col-span-3 min-h-60 border border-gray-100 rounded-xl">
+        <div className="col-span-9 md:col-span-3 min-h-100  md border border-gray-100 rounded-xl">
           <Stack
            selectTechnologies={selectTechnologies}
            setSelectedTechnologies={setSelectedTechnologies}
