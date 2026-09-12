@@ -18,23 +18,21 @@ const TechnologyCard = ({
   );
 
   const handleAddToStack = () => {
-    const existTechnology = selectTechnologies.find(
+    const existTechnology = selectTechnologies.some(
       (t) => t.id === technology.id
     );
 
+     
+
     if (existTechnology) {
-      const remainingTechnology = selectTechnologies.filter(
-        (t) => t.id !== technology.id
-      );
 
-      setSelectedTechnologies(remainingTechnology);
-
-      toast.success(`${technology.name} Removed`, {
+      toast.warning(`${technology.name} is already in your stack`, {
         position: "top-center",
         autoClose: 3000,
         theme: "light",
         transition: Bounce,
       });
+      return;
     } else {
       setSelectedTechnologies([...selectTechnologies, technology]);
 
@@ -71,6 +69,7 @@ const TechnologyCard = ({
         </div>
         <button
           onClick={handleAddToStack}
+          disabled={isAdded}
           className={`btn rounded-xl  ${isAdded ? "btn-secondary" : "btn-neutral"} w-full`}
         >
           {isAdded ? "Added to Stack" : "Add to Stack"}

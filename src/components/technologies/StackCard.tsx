@@ -17,7 +17,7 @@ const StackCard = ({technology, selectTechnologies, setSelectedTechnologies}:ISt
   return (
     <div>
       <div className="p-2 flex  gap-4 border items-center border-gray-200 rounded-2xl ">
-        <img src={technology.icon} alt="" className="w-9" />
+        <img src={technology.icon} alt="" className="w-9"/>
         <div>
           <h4>{technology.name}</h4>
           <p>{technology.category}</p>
