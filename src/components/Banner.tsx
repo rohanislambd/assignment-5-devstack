@@ -10,8 +10,8 @@ const Banner = () => {
           side by side, and put together the stack that fits your next project.
         </p>
         <div className="flex gap-5">
-          <button className="btn bg-gradient-to-r from-[#F97316]  to-[#EC4899] rounded text-white">Explore Technologies</button>
-          <button className="btn rounded px-11">Learn More</button>
+          <button className="btn bg-gradient-to-r from-[#F97316]  to-[#EC4899] rounded text-white text-[10px] md:text-base">Explore Technologies</button>
+          <button className="btn rounded md:px-11">Learn More</button>
         </div>
       </div>
       <div>

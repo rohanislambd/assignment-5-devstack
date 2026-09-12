@@ -1,32 +1,42 @@
-# React + TypeScript + Vite
+# 🛠️ Technology Stack Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern and responsive **Technology Stack Manager** built with React and TypeScript. Users can explore different technologies, add their favorite technologies to a personal stack, and easily remove individual technologies or clear the entire stack.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* ⚛️ React
+* 🔷 TypeScript
+* 🎨 Tailwind CSS
+* ⚡ Vite
+* 🔔 React Toastify
+* ⭐ React Icons
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 🔍 Explore Technologies
 
-## Expanding the Oxlint configuration
+Browse different technologies with useful information such as their name, category, icon, and other details.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### 2. ➕ Add Technologies to Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+Add your favorite technologies to your personal stack with a single click. The interface prevents duplicate technologies from being added.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 3. 🗑️ Manage Your Stack
+
+Easily remove individual technologies from your stack or use **Remove All** to clear the entire stack.
+
+## 📱 Responsive Design
+
+The project is fully responsive and works smoothly across:
+
+* 📱 Mobile
+* 📲 Tablet
+* 💻 Desktop
+
+## 🎯 Project Goal
+
+The main goal of this project is to practice **React state management, component communication, TypeScript, conditional rendering, and responsive UI development** while building a practical application.
+
+---
+
+### 👨‍💻 Built with ❤️ using React + TypeScript
