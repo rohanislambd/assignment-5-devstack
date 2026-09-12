@@ -1,30 +1,57 @@
 import { IoStar } from "react-icons/io5";
 import type { ITechnologies } from "../../types/type";
-import { useState } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import { Bounce, toast } from "react-toastify";
-interface TechnologyProps{
-    technology: ITechnologies;
+interface TechnologyProps {
+  technology: ITechnologies;
+  selectTechnologies: ITechnologies[];
+  setSelectedTechnologies: Dispatch<SetStateAction<ITechnologies[]>>;
 }
-const TechnologyCard = ({technology}:TechnologyProps) => {
-   const [isAdded, setIsAdded] = useState<boolean>(false);
-   const handleAddToStack = () =>{
-     setIsAdded(true)
-       toast.success(`${technology.name} Added`, {
+const TechnologyCard = ({
+  technology,
+  selectTechnologies,
+  setSelectedTechnologies,
+}: TechnologyProps) => {
+
+ const isAdded = selectTechnologies.some(
+    (technologyItem) => technologyItem.id === technology.id
+  );
+
+  const handleAddToStack = () => {
+    const existTechnology = selectTechnologies.find(
+      (t) => t.id === technology.id
+    );
+
+    if (existTechnology) {
+      const remainingTechnology = selectTechnologies.filter(
+        (t) => t.id !== technology.id
+      );
+
+      setSelectedTechnologies(remainingTechnology);
+
+      toast.success(`${technology.name} Removed`, {
         position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        autoClose: 3000,
         theme: "light",
         transition: Bounce,
-        });
-   }
+      });
+    } else {
+      setSelectedTechnologies([...selectTechnologies, technology]);
+
+      toast.success(`${technology.name} Added`, {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
 
   return (
-    <div className="">
-      <div className={`shadow  p-3 space-y-4 rounded-2xl bg-[#FFFFFF] ${isAdded ? "border border-pink-600":""}`}>
+    <div>
+      <div
+        className={`shadow  p-3 space-y-4 rounded-2xl bg-[#FFFFFF] ${isAdded ? "border border-pink-600" : ""}`}
+      >
         <div className="flex justify-between">
           <img src={technology.icon} alt="" className="max-w-10" />
           <p className="text-blue-400 btn rounded-full">{technology.badge}</p>
@@ -43,12 +70,12 @@ const TechnologyCard = ({technology}:TechnologyProps) => {
           </p>
         </div>
         <button
-        onClick={()=>handleAddToStack()}
-         className={`btn rounded-xl  ${isAdded ? "btn-secondary" : "btn-neutral"} w-full`}>
-          {isAdded ? "Added to Stack": "Add to Stack"}
+          onClick={handleAddToStack}
+          className={`btn rounded-xl  ${isAdded ? "btn-secondary" : "btn-neutral"} w-full`}
+        >
+          {isAdded ? "Added to Stack" : "Add to Stack"}
         </button>
       </div>
-   
     </div>
   );
 };

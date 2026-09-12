@@ -1,6 +1,7 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { ITechnologies } from "../../types/type";
 import TechnologyCard from "./TechnologyCard";
+import Stack from "./Stack";
 
 interface TechnologiesProps {
   technologiesPromise: Promise<ITechnologies[]>;
@@ -8,11 +9,17 @@ interface TechnologiesProps {
 
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
   const technologies = use(technologiesPromise);
-  console.log(technologies);
+
+  const [selectTechnologies, setSelectedTechnologies] = useState<ITechnologies[]>([]);
+
+
+
+  
   return (
     <div className="container mx-auto ">
       <h2 className="text-4xl font-bold">
-        Explore the <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
+        Explore the{" "}
+        <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
           Technologies
         </span>
       </h2>
@@ -20,14 +27,25 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 gap-8">
         <div className="grid col-span-9  grid-cols-3 gap-5">
           {technologies.map((technology) => {
-            return <TechnologyCard
-            key={technology.id} 
-            technology={technology} 
-            />;
+            return (
+              <TechnologyCard key={technology.id}
+               technology={technology} 
+               selectTechnologies={selectTechnologies}
+               setSelectedTechnologies={setSelectedTechnologies}
+               />
+            );
           })}
+        </div>
+
+        {/* Stack Cart */}
+        <div className="grid col-span-3 h-60 border border-gray-100 rounded-xl">
+          <Stack
+           selectTechnologies={selectTechnologies}
+           setSelectedTechnologies={setSelectedTechnologies}
+          />
         </div>
       </div>
     </div>
